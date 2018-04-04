@@ -8,7 +8,7 @@ public class Wallet<T> implements ArrayCreator {
 private int valuesInArray;
 
 	public Wallet() {
-		this.array = create(0);
+	    this.array = create(0);
 		this.valuesInArray = 0;
 	}
 
