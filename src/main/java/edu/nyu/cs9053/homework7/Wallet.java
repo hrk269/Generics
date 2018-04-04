@@ -5,42 +5,42 @@ public class Wallet<T> implements ArrayCreator {
 
     private T[] array;
 
-private int valuesInArray;
+    private int valuesInArray;
 
-	public Wallet() {
-	    this.array = create(0);
-		this.valuesInArray = 0;
-	}
+    public Wallet() {
+        this.array = create(0);
+        this.valuesInArray = 0;
+    }
 
     public T[] create(int newArraySize){
         return (T[]) new Object[newArraySize];
-	}
+    }
 
-	public boolean add(T value) {
-		T[] newWalletArray = create(this.valuesInArray + 1);
-		if (contains(value)){
-		    return false;
+    public boolean add(T value) {
+	T[] newWalletArray = create(this.valuesInArray + 1);
+	if (contains(value)){
+	    return false;
         }
-		for (int i = 0; i < (this.valuesInArray); i++) {
-			newWalletArray[i] = this.array[i];
-		}
-		newWalletArray[this.valuesInArray] = value;
-		this.array = newWalletArray;
-		this.valuesInArray += 1;
-		return true;
+	for (int i = 0; i < (this.valuesInArray); i++) {
+            newWalletArray[i] = this.array[i];
 	}
+	newWalletArray[this.valuesInArray] = value;
+	this.array = newWalletArray;
+	this.valuesInArray += 1;
+	return true;
+    }
 
-	public boolean contains(T value) {
-		for (int i = 0; i < this.valuesInArray; i++) {
-			if (this.array[i].equals(value)) {
-				return true;
-			}
-		}
-		return false;
-	}
+    public boolean contains(T value) {
+        for (int i = 0; i < this.valuesInArray; i++) {
+	    if (this.array[i].equals(value)) {
+                return true;
+            }
+        }
+    return false;
+    }
 
-	public boolean remove(T value) {
-		if (!contains(value)) {
+    public boolean remove(T value) {
+        if (!contains(value)) {
             return false;
         }
 		for (int i = 0; i < this.valuesInArray - 1; i++) {
