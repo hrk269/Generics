@@ -43,28 +43,28 @@ public class Wallet<T> implements ArrayCreator {
         if (!contains(value)) {
             return false;
         }
-		for (int i = 0; i < this.valuesInArray - 1; i++) {
-			if (this.array[i].equals(value)){
-				T tempHolder = this.array[i];
-				this.array[i] = this.array[this.valuesInArray-1];
-				this.array[this.valuesInArray-1] = tempHolder;
-			}
-		}
+	for (int i = 0; i < this.valuesInArray - 1; i++) {
+	    if (this.array[i].equals(value)){
+	        T tempHolder = this.array[i];
+	        this.array[i] = this.array[this.valuesInArray-1];
+	        this.array[this.valuesInArray-1] = tempHolder;
+	    }
+        }
         this.array = Arrays.copyOf(this.array, this.array.length - 1);
         this.valuesInArray -= 1;
         return true;
-	}
+    }
 
-	public T get(int index) {
-		try {
-		    return this.array[index];
+    public T get(int index) {
+        try {
+            return this.array[index];
         }
         catch (IndexOutOfBoundsException E){
-		    return null;
+	    return null;
         }
-	}
+    }
 
-	public int size(){
-		return this.valuesInArray;
-	}
+    public int size(){
+        return this.valuesInArray;
+    }
 }
