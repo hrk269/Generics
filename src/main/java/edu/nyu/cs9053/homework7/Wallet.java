@@ -3,16 +3,16 @@ import java.util.*;
 
 public class Wallet<T> implements ArrayCreator {
 
-	private T[] array;
+    private T[] array;
 
-	private int valuesInArray;
+private int valuesInArray;
 
 	public Wallet() {
 		this.array = create(0);
 		this.valuesInArray = 0;
 	}
 
-	public T[] create(int newArraySize){
+    public T[] create(int newArraySize){
         return (T[]) new Object[newArraySize];
 	}
 
